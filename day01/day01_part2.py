@@ -7,12 +7,10 @@ INPUT_TXT = os.path.join(os.path.dirname(__file__), "input.txt")
 def solve(s: str) -> int:
     numbers = [int(line) for line in s.splitlines()]
     count = 0
-    prev = []
-    for i in range(len(numbers) - 3 + 1):
-        cur = numbers[i : i + 3]
-        if len(prev) > 1 and sum(cur) > sum(prev):
+    for i in range(3, len(numbers)):
+        if sum(numbers[i - 2 : i + 1]) > sum(numbers[i - 3 : i]):
             count += 1
-        prev = cur
+
     return count
 
 
