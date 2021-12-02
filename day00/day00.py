@@ -1,5 +1,6 @@
-import pytest
 import os
+
+import pytest
 
 INPUT_TXT = os.path.join(os.path.dirname(__file__), "input.txt")
 
