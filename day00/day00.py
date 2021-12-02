@@ -22,7 +22,7 @@ INPUT_SAMPLE = """
 
 @pytest.mark.parametrize(
     ("input_s", "expected"),
-    ((INPUT_SAMPLE, 7)),
+    ((INPUT_SAMPLE, 7),),
 )
 def test(input_sample: str, expected: int) -> None:
     assert solve(input_sample) == expected
@@ -31,7 +31,7 @@ def test(input_sample: str, expected: int) -> None:
 def main() -> int:
 
     with open("input.txt") as f:
-        solve(f.read())
+        print(solve(f.read()))
 
     return 0
 
