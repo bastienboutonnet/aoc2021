@@ -1,4 +1,5 @@
 import os
+import timeit
 
 import pytest
 
@@ -16,12 +17,12 @@ def solve(s: str) -> int:
     return 0
 
 
-INPUT_SAMPLE = """
+INPUT_SAMPLE = """\
 """
 
 
 @pytest.mark.parametrize(
-    ("input_s", "expected"),
+    ("input_sample", "expected"),
     ((INPUT_SAMPLE, 7),),
 )
 def test(input_sample: str, expected: int) -> None:
@@ -37,4 +38,4 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    main()
+    print(timeit.timeit(main, number=1))
